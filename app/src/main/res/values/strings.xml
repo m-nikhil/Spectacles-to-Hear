@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Spectacles to Hear</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="capture_button">N</string>
+    <string name="desc">capture image place holder</string>
+</resources>
+
