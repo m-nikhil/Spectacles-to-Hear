@@ -36,6 +36,7 @@ public class MainActivity extends Activity
     private FrameLayout cameraPreviewLayout;
     private ImageView capturedImageHolder;
 
+
     public static boolean speechRecognizer = false;
 
     @Override
@@ -75,7 +76,7 @@ public class MainActivity extends Activity
         @Override
         protected void onPostExecute(Camera openedcamera){
                camera = openedcamera;
-               camera.setFaceDetectionListener(new MyFaceDetectionListener());
+               camera.setFaceDetectionListener(new MyFaceDetectionListener(MainActivity.this));
                mImageSurfaceView = new ImageSurfaceView(MainActivity.this, openedcamera);
                cameraPreviewLayout.addView(mImageSurfaceView);
         }
@@ -87,7 +88,6 @@ public class MainActivity extends Activity
         Camera mCamera = null;
         try {
             mCamera = Camera.open();
-            mCamera.setDisplayOrientation(90);
         } catch (Exception e) {
             e.printStackTrace();
         }
